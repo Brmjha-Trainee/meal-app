@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+var isPressed = false;
 List<String> steps = [
   'A',
   'Flutter',
@@ -15,25 +15,36 @@ List<String> ingredients = [
   'C',
   'C++'
 ];
-void main() => runApp(Homepage());
 
-class Homepage extends StatelessWidget {
-  const Homepage({Key? key}) : super(key: key);
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'menu_app',
+      // Application name
+      title: '',
       theme: ThemeData(
+        // Application theme data, you can set the colors for the application as
+        // you want
         primarySwatch: Colors.pink,
       ),
-      home: const OneMeal(),
+      home: MyHomePage(title: ''),
     );
   }
 }
 
-class OneMeal extends StatelessWidget {
-  const OneMeal();
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
@@ -47,7 +58,7 @@ class OneMeal extends StatelessWidget {
   Widget _createSectionContainer(Widget child) {
     return Container(
       width: 320,
-      height: 200,
+      height: double.infinity,
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -71,7 +82,7 @@ class OneMeal extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 300,
+              height: double.infinity, //300,
               width: double.infinity,
               child: Image.network(
                 'https://th.bing.com/th/id/R.a53d487d99e076bd5e250b52e9b4fd96?rik=jPl0elHEmuIKow&pid=ImgRaw&r=0',
@@ -91,8 +102,7 @@ class OneMeal extends StatelessWidget {
                         ),
                         child: Text(ingredients[index]),
                       ),
-                      color: Colors.white10 //Theme.of(context).accentColor,
-                      );
+                      color: Colors.white10);
                 },
               ),
             ),
@@ -118,10 +128,9 @@ class OneMeal extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
         child: Icon(Icons.shopping_cart),
-        backgroundColor: Colors.yellow,
-        hoverColor: Colors.red,
+        backgroundColor: isPressed ? Colors.red : Colors.yellow,
+        onPressed: () => setState(() => isPressed = !isPressed),
       ),
     );
   }
