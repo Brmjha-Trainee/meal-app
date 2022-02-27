@@ -20,9 +20,19 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
         body: Center(
       child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromARGB(255, 240, 162, 247),
+              Color.fromARGB(255, 245, 217, 90),
+            ],
+          ),
+        ),
         height: 600,
         width: 300,
-        color: Colors.yellow,
+        //color: Colors.yellow,
         padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
         child: Visibility(
           child: Column(
