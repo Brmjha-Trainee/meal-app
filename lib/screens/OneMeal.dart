@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 var isPressed = false;
 List<String> steps = [
-  'A',
-  'Flutter',
-  'C',
-  'C++',
-  'l',
-  'happy'
+  'cut',
+  'Boil',
+  ' ',
+  '',
+  '',
+  ''
 ];
 List<String> ingredients = [
-  'Java',
-  'Flutter',
-  'C',
-  'C++'
+  '4 Tomatoes',
+  '1 Tabelspoon ',
+  '1 Onion',
+  'Spices','Cheese (optional)'
 ];
 
 void main() => runApp(MyApp());
