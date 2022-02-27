@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//import 'package:flexible/flexible.dart';
 var isPressed = false;
 List<String> steps = [
   'A',
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _createSectionContainer(Widget child) {
     return Container(
       width: 320,
-      height: double.infinity,
+      //height: double.infinity,
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -82,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Container(
-              height: double.infinity, //300,
+              height: 300,
               width: double.infinity,
               child: Image.network(
                 'https://th.bing.com/th/id/R.a53d487d99e076bd5e250b52e9b4fd96?rik=jPl0elHEmuIKow&pid=ImgRaw&r=0',
@@ -92,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _createSectionTitle(context, 'Ingredients'),
             _createSectionContainer(
               ListView.builder(
+                shrinkWrap: true,
                 itemCount: ingredients.length,
                 itemBuilder: (ctx, index) {
                   return Card(
@@ -109,6 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _createSectionTitle(context, 'Steps'),
             _createSectionContainer(
               ListView.builder(
+                shrinkWrap: true,
                 itemCount: steps.length,
                 itemBuilder: (ctx, index) {
                   return Column(
