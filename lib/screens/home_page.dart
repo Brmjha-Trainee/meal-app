@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/utils/Bottom_Navigation.dart';
 import 'package:meal_app/utils/main_drawer.dart';
 import 'package:meal_app/utils/constant.dart';
 import 'package:meal_app/utils/photo_items.dart';
@@ -60,6 +61,7 @@ class _HomePageState extends State<HomePage> {
               ],
             );
           }),
+
       drawer: const MainDrawer(),
     );
   }
