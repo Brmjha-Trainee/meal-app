@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-//import 'package:flexible/flexible.dart';
 var isPressed = false;
 List<String> steps = [
   'A',
@@ -27,8 +25,6 @@ class MyApp extends StatelessWidget {
       // Application name
       title: '',
       theme: ThemeData(
-        // Application theme data, you can set the colors for the application as
-        // you want
         primarySwatch: Colors.pink,
       ),
       home: MyHomePage(title: ''),
