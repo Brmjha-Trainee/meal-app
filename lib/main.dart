@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/screens/home_page.dart';
+import 'package:meal_app/utils/constant.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +15,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          scaffoldBackgroundColor: yellow,
+          drawerTheme: const DrawerThemeData(
+            backgroundColor: yellow,
+          )),
       home: const HomePage(),
     );
   }

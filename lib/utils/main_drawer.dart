@@ -15,16 +15,23 @@ class _MainDrawerState extends State<MainDrawer> {
       child: Column(
         children: <Widget>[
           Container(
+            color: darkYellow,
             width: double.infinity,
-            padding: const EdgeInsets.all(20),
-            color: yellow,
-            child: Column(
-              children: const <Widget>[
-                SizedBox(
-                  width: 200,
-                  height: 60,
-                )
-              ],
+            child: SizedBox(
+              height: 150,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  Text(
+                    "Hi Chef !",
+                    style: TextStyle(
+                      fontSize: 28,
+                      color: pink,
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           ListTile(
