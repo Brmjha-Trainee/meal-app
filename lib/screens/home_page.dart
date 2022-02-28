@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/utils/Bottom_Navigation.dart';
 import 'package:meal_app/screens/meals.dart';
 import 'package:meal_app/utils/main_drawer.dart';
 import 'package:meal_app/utils/constant.dart';
@@ -13,9 +14,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<PhotoItem> imgList = [
-      PhotoItem('images/burger.jpg', 'Burgers', 'Grilled beef burger'),
-      PhotoItem('images/spaghetti.jpg', 'Spaghetti', 'Spaghetti with tomato sauce'),
-      PhotoItem('images/toast.jpg', 'Quick & easy', 'Toast Hawaii'),
+    PhotoItem('images/burger.jpg', 'Burgers', 'Grilled beef burger'),
+    PhotoItem(
+        'images/spaghetti.jpg', 'Spaghetti', 'Spaghetti with tomato sauce'),
+    PhotoItem('images/toast.jpg', 'Quick & easy', 'Toast Hawaii'),
   ];
   @override
   Widget build(BuildContext context) {
