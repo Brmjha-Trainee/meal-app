@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
+
 var isPressed = false;
-List<String> steps = [
-  'cut',
-  'Boil',
-  ' ',
-  '',
-  '',
-  ''
-];
+List<String> steps = ['cut', 'Boil', ' ', '', '', ''];
 List<String> ingredients = [
   '4 Tomatoes',
   '1 Tabelspoon ',
   '1 Onion',
-  'Spices','Cheese (optional)'
+  'Spices',
+  'Cheese (optional)'
 ];
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -27,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: MyHomePage(title: ''),
+      home: const MyHomePage(title: ''),
     );
   }
 }
@@ -44,7 +41,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         title,
         style: Theme.of(context).textTheme.headline6,
@@ -56,8 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Container(
       width: 320,
       //height: double.infinity,
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -73,12 +70,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('spaghetti'),
+        title: const Text('spaghetti'),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 300,
               width: double.infinity,
               child: Image.network(
@@ -127,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.shopping_cart),
+        child: const Icon(Icons.shopping_cart),
         backgroundColor: isPressed ? Colors.red : Colors.yellow,
         onPressed: () => setState(() => isPressed = !isPressed),
       ),
