@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/screens/Cart.dart';
 import 'package:meal_app/screens/home_page.dart';
+import 'package:meal_app/screens/sign_in_page.dart';
 import 'package:meal_app/utils/Bottom_Navigation.dart';
 import 'package:meal_app/utils/constant.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           drawerTheme: const DrawerThemeData(
             backgroundColor: yellow,
           )),
-      home: const BottomN(),
+      home: const SignInPage(),
     );
   }
 }

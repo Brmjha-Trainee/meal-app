@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/utils/main_drawer.dart';
 import 'package:meal_app/utils/constant.dart';
+import 'package:meal_app/utils/Bottom_Navigation.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -77,7 +78,10 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                         ElevatedButton(
                             onPressed: () {
-                              //do something
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => BottomN()));
                             },
                             style: ButtonStyle(
                               shape: MaterialStateProperty.all<
