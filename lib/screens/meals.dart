@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/screens/one_meal.dart';
 
 import '../utils/constant.dart';
 import '../utils/photo_items.dart';
@@ -42,9 +43,18 @@ class MealScreen extends StatelessWidget {
                   children: [
                     Stack(
                       children: [
-                        Image.asset(
-                          imgList[index].image,
-                          fit: BoxFit.contain,
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const OneMeal()),
+                            );
+                          },
+                          child: Image.asset(
+                            imgList[index].image,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                         Positioned(
                           // The Positioned widget is used to position the text inside the Stack widget

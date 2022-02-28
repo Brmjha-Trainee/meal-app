@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                           Image.asset(
                             imgList[index].image,
                             fit: BoxFit.fitWidth,
-                            height: 100,
+                            height: 80,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),

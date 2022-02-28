@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/screens/Cart.dart';
+
+import '../utils/constant.dart';
 
 var isPressed = false;
 List<String> steps = ['cut', 'Boil', ' ', '', '', ''];
@@ -10,35 +13,35 @@ List<String> ingredients = [
   'Cheese (optional)'
 ];
 
-void main() => runApp(const MyApp());
+// class OneMeal extends StatelessWidget {
+//   const OneMeal({Key? key}) : super(key: key);
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+//   // This widget is the root of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       // Application name
+//       title: '',
+//       theme: ThemeData(
+//         primarySwatch: Colors.pink,
+//       ),
+//       home: const MyHomePage(title: ''),
+//     );
+//   }
+// }
 
-  // This widget is the root of your application.
+class OneMeal extends StatefulWidget {
+  const OneMeal({
+    Key? key,
+  }) : super(key: key);
+
+  //final String title;
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Application name
-      title: '',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
-      home: const MyHomePage(title: ''),
-    );
-  }
+  _OneMealState createState() => _OneMealState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _OneMealState extends State<OneMeal> {
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
@@ -70,7 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('spaghetti'),
+        title: const Text('Spaghetti with Tomato Sauce'),
+        backgroundColor: pink,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back)),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -124,10 +133,17 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.shopping_cart),
-        backgroundColor: isPressed ? Colors.red : Colors.yellow,
-        onPressed: () => setState(() => isPressed = !isPressed),
-      ),
+          child: const Icon(Icons.shopping_cart),
+          backgroundColor: isPressed ? Colors.red : Colors.yellow,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Cart()),
+            );
+          }
+
+          // => setState(() => isPressed = !isPressed),
+          ),
     );
   }
 }
