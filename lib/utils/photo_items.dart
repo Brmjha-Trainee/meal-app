@@ -1,5 +1,6 @@
 class PhotoItem {
   final String image;
   final String name;
-  PhotoItem(this.image, this.name);
+  final String description;
+  PhotoItem(this.image, this.name, this.description);
 }
