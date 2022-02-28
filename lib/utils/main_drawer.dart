@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/screens/home_page.dart';
+import 'package:meal_app/screens/sign_in_page.dart';
 import 'package:meal_app/utils/constant.dart';
 
 class MainDrawer extends StatefulWidget {
@@ -46,12 +48,12 @@ class _MainDrawerState extends State<MainDrawer> {
               ),
             ),
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => Page Name(),
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomePage(),
+                ),
+              );
             },
           ),
           ListTile(
@@ -106,12 +108,12 @@ class _MainDrawerState extends State<MainDrawer> {
               ),
             ),
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => Page Name(),
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SignInPage(),
+                ),
+              );
             },
           ),
         ],
