@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/utils/Bottom_Navigation.dart';
+import 'package:meal_app/screens/meals.dart';
 import 'package:meal_app/utils/main_drawer.dart';
 import 'package:meal_app/utils/constant.dart';
 import 'package:meal_app/utils/photo_items.dart';
@@ -13,9 +14,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<PhotoItem> imgList = [
-    PhotoItem('images/burger.jpg', 'Burgers'),
-    PhotoItem('images/spaghetti.jpeg', 'Spaghetti'),
-    PhotoItem('images/toast.jpg', 'Quick & easy'),
+    PhotoItem('images/burger.jpg', 'Burgers', 'Grilled beef burger'),
+    PhotoItem(
+        'images/spaghetti.jpg', 'Spaghetti', 'Spaghetti with tomato sauce'),
+    PhotoItem('images/toast.jpg', 'Quick & easy', 'Toast Hawaii'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
               onPressed: () {}, icon: const Icon(Icons.restaurant_rounded))
         ],
-      ), //AppBar
+      ),
       body: GridView.builder(
           shrinkWrap: true,
           padding: const EdgeInsets.all(10),
@@ -41,27 +43,34 @@ class _HomePageState extends State<HomePage> {
           itemBuilder: (BuildContext context, int index) {
             return Column(
               children: [
-                Card(
-                  clipBehavior: Clip.antiAlias,
-                  child: SizedBox(
-                    height: 120,
-                    width: 150,
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          imgList[index].image,
-                          fit: BoxFit.fitWidth,
-                          height: 100,
-                        ),
-                        Text(imgList[index].name),
-                      ],
+                InkWell(
+                    child: Card(
+                      clipBehavior: Clip.antiAlias,
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            imgList[index].image,
+                            fit: BoxFit.fitWidth,
+                            height: 100,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(imgList[index].name),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const MealScreen(),
+                          ));
+                    }),
               ],
             );
           }),
-
       drawer: const MainDrawer(),
     );
   }
