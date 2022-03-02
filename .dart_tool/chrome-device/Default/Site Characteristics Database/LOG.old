@@ -1,0 +1,5 @@
+2022/02/28-16:06:38.062 4e8c Log #3: 3 ops saved to Table #4 OK
+2022/02/28-16:06:38.277 4e8c Archiving C:\Users\faiza\AppData\Local\Temp\flutter_tools.4e298a29\flutter_tools_chrome_device.d3e81109\Default\Site Characteristics Database/000003.log: OK
+2022/02/28-16:06:38.278 4e8c Table #4: 3 entries OK
+2022/02/28-16:06:38.292 4e8c Archiving C:\Users\faiza\AppData\Local\Temp\flutter_tools.4e298a29\flutter_tools_chrome_device.d3e81109\Default\Site Characteristics Database/MANIFEST-000001: OK
+2022/02/28-16:06:38.333 4e8c **** Repaired leveldb C:\Users\faiza\AppData\Local\Temp\flutter_tools.4e298a29\flutter_tools_chrome_device.d3e81109\Default\Site Characteristics Database; recovered 1 files; 223 bytes. Some data may have been lost. ****
