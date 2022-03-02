@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/screens/Cart.dart';
+import 'package:meal_app/screens/cart.dart';
 
 import '../utils/constant.dart';
 
@@ -13,29 +13,13 @@ List<String> ingredients = [
   'Cheese (optional)'
 ];
 
-// class OneMeal extends StatelessWidget {
-//   const OneMeal({Key? key}) : super(key: key);
 
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       // Application name
-//       title: '',
-//       theme: ThemeData(
-//         primarySwatch: Colors.pink,
-//       ),
-//       home: const MyHomePage(title: ''),
-//     );
-//   }
-// }
 
 class OneMeal extends StatefulWidget {
   const OneMeal({
     Key? key,
   }) : super(key: key);
 
-  //final String title;
 
   @override
   _OneMealState createState() => _OneMealState();
@@ -55,7 +39,6 @@ class _OneMealState extends State<OneMeal> {
   Widget _createSectionContainer(Widget child) {
     return Container(
       width: 320,
-      //height: double.infinity,
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(

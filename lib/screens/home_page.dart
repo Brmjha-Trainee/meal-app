@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/utils/Bottom_Navigation.dart';
 import 'package:meal_app/screens/meals.dart';
 import 'package:meal_app/utils/main_drawer.dart';
 import 'package:meal_app/utils/constant.dart';
@@ -23,7 +22,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Categories'),
+        title: const Text(
+          'Categories',
+        ),
         backgroundColor: pink,
         actions: [
           IconButton(
@@ -55,7 +56,10 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(imgList[index].name),
+                            child: Text(
+                              imgList[index].name,
+                              style: Theme.of(context).textTheme.headline6,
+                            ),
                           ),
                         ],
                       ),

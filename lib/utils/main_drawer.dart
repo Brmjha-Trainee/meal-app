@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/screens/home_page.dart';
+import 'package:meal_app/screens/meals.dart';
 import 'package:meal_app/screens/sign_in_page.dart';
 import 'package:meal_app/utils/constant.dart';
 
@@ -39,7 +39,6 @@ class _MainDrawerState extends State<MainDrawer> {
           ListTile(
             leading: const Icon(
               Icons.restaurant_outlined,
-              //        color: lightSerenity,
             ),
             title: const Text(
               'Meals',
@@ -51,7 +50,7 @@ class _MainDrawerState extends State<MainDrawer> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const HomePage(),
+                  builder: (context) => const MealScreen(),
                 ),
               );
             },
@@ -59,7 +58,6 @@ class _MainDrawerState extends State<MainDrawer> {
           ListTile(
             leading: const Icon(
               Icons.settings,
-              // color: lightSerenity,
             ),
             title: const Text(
               'Filters',
@@ -79,7 +77,6 @@ class _MainDrawerState extends State<MainDrawer> {
           ListTile(
             leading: const Icon(
               Icons.pin_drop,
-              //color: lightSerenity,
             ),
             title: const Text(
               'Location',
@@ -99,7 +96,6 @@ class _MainDrawerState extends State<MainDrawer> {
           ListTile(
             leading: const Icon(
               Icons.door_front_door_outlined,
-              // color: lightSerenity,
             ),
             title: const Text(
               'LogOut',

@@ -31,7 +31,6 @@ class MealScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             return Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              // height: 220,
               width: double.maxFinite,
               child: Card(
                 shape: RoundedRectangleBorder(
@@ -84,12 +83,12 @@ class MealScreen extends StatelessWidget {
                             Icons.access_time,
                             size: 18,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 5.0),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 5.0),
                             child: Text(
                               '20 min',
                               style: TextStyle(
-                                color: Colors.grey.shade800,
+                                color: grey,
                                 fontWeight: FontWeight.normal,
                                 fontSize: 14,
                               ),
@@ -120,12 +119,12 @@ class MealScreen extends StatelessWidget {
                             Icons.attach_money_outlined,
                             size: 18,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 5.0),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 5.0),
                             child: Text(
                               'Affordable',
                               style: TextStyle(
-                                color: Colors.grey.shade800,
+                                color: grey,
                                 fontWeight: FontWeight.normal,
                                 fontSize: 14,
                               ),

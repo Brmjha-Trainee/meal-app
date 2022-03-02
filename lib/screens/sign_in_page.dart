@@ -1,9 +1,7 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:meal_app/utils/main_drawer.dart';
-import 'package:meal_app/utils/constant.dart';
-import 'package:meal_app/utils/Bottom_Navigation.dart';
+import 'package:meal_app/utils/bottom_navigation.dart';
+
+import '../utils/constant.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -21,7 +19,7 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
         body: Center(
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -55,56 +53,60 @@ class _SignInPageState extends State<SignInPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         TextFormField(
-                          decoration: InputDecoration(
-                              labelText: "Email Address",
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)),
-                              )),
+                          decoration: const InputDecoration(
+                            labelText: "Email Address",
+                            border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                            ),
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         TextFormField(
-                          decoration: InputDecoration(
-                              labelText: "Password",
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)),
-                              )),
+                          decoration: const InputDecoration(
+                            labelText: "Password",
+                            border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                            ),
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => BottomN()));
-                            },
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              )),
-                              backgroundColor:
-                                  MaterialStateProperty.all(Colors.pink),
-                            ),
-                            child: Text('LOGIN',
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.normal))),
-                        SizedBox(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const BottomN()));
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                            )),
+                            backgroundColor: MaterialStateProperty.all(pink),
+                          ),
+                          child: const Text(
+                            'LOGIN',
+                            style: TextStyle(
+                                fontSize: 10, fontWeight: FontWeight.normal),
+                          ),
+                        ),
+                        const SizedBox(
                           height: 10,
                         ),
                         InkWell(
-                            child: Text('SIGN UP INSTEAD',
-                                style: TextStyle(
-                                    color: Colors.pink,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold)),
+                            child: const Text(
+                              'SIGN UP INSTEAD',
+                              style: TextStyle(
+                                  color: Colors.pink,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold),
+                            ),
                             onTap: () => {
                                   isExist = false,
                                   setState(() {}),
@@ -134,68 +136,74 @@ class _SignInPageState extends State<SignInPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         TextFormField(
-                          decoration: InputDecoration(
-                              labelText: "Email Address",
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)),
-                              )),
+                          decoration: const InputDecoration(
+                            labelText: "Email Address",
+                            border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                            ),
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         TextFormField(
-                          decoration: InputDecoration(
-                              labelText: "Password",
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)),
-                              )),
+                          decoration: const InputDecoration(
+                            labelText: "Password",
+                            border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                            ),
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         TextFormField(
-                          decoration: InputDecoration(
-                              labelText: "Confirm Password",
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)),
-                              )),
+                          decoration: const InputDecoration(
+                            labelText: "Confirm Password",
+                            border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                            ),
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         ElevatedButton(
-                            onPressed: () {
-                              //do something
-                            },
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              )),
-                              backgroundColor:
-                                  MaterialStateProperty.all(Colors.pink),
-                            ),
-                            child: Text('SIGN UP',
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.normal))),
-                        SizedBox(
+                          onPressed: () {
+                            //TODO DO SOMETHING
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                            )),
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.pink),
+                          ),
+                          child: const Text(
+                            'SIGN UP',
+                            style: TextStyle(
+                                fontSize: 10, fontWeight: FontWeight.normal),
+                          ),
+                        ),
+                        const SizedBox(
                           height: 10,
                         ),
                         InkWell(
-                            child: Text('LOGIN INSTEAD',
-                                style: TextStyle(
-                                    color: Colors.pink,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold)),
+                            child: const Text(
+                              'LOGIN INSTEAD',
+                              style: TextStyle(
+                                  color: pink,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold),
+                            ),
                             onTap: () => {
                                   isExist = true,
                                   setState(() {}),
