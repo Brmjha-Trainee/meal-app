@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/utils/constant.dart';
-
 import '../screens/cart.dart';
 import '../screens/home_page.dart';
 
@@ -26,10 +24,7 @@ class _BottomNState extends State<BottomN> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex,
-          onTap: (index) => setState(() => currentIndex = index),
-          backgroundColor: pink,
-          selectedItemColor: yellow,
-          unselectedItemColor: white,
+          onTap: (index) => setState(() => currentIndex = index),        
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.category),

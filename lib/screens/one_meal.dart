@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/screens/cart.dart';
 
-import '../utils/constant.dart';
-
 var isPressed = false;
 List<String> steps = ['cut', 'Boil', ' ', '', '', ''];
 List<String> ingredients = [
@@ -13,13 +11,10 @@ List<String> ingredients = [
   'Cheese (optional)'
 ];
 
-
-
 class OneMeal extends StatefulWidget {
   const OneMeal({
     Key? key,
   }) : super(key: key);
-
 
   @override
   _OneMealState createState() => _OneMealState();
@@ -57,7 +52,6 @@ class _OneMealState extends State<OneMeal> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Spaghetti with Tomato Sauce'),
-        backgroundColor: pink,
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);

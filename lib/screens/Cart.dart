@@ -15,7 +15,6 @@ class _CartState extends State<Cart> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cart'),
-        backgroundColor: pink,
         actions: [
           IconButton(
               onPressed: () {}, icon: const Icon(Icons.restaurant_rounded))

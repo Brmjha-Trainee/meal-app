@@ -12,7 +12,7 @@ class MealScreen extends StatelessWidget {
     List<PhotoItem> imgList = [
       PhotoItem('images/burger.jpg', 'Burgers', 'Grilled beef burger'),
       PhotoItem(
-          'images/spaghetti.jpg', 'Spaghetti', 'Spaghetti with tomato sauce'),
+          'images/spaghetti.jpg', 'Italian', 'Spaghetti with tomato sauce'),
       PhotoItem('images/toast.jpg', 'Quick & easy', 'Toast Hawaii'),
     ];
     return Scaffold(
