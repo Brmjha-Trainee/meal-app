@@ -11,11 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<PhotoItem> imgList = [
-    PhotoItem('images/burger.jpg', 'Burgers', 'Grilled beef burger'),
-    PhotoItem('images/spaghetti.jpg', 'Italian', 'Spaghetti with tomato sauce'),
-    PhotoItem('images/toast.jpg', 'Quick & easy', 'Toast Hawaii'),
-  ];
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,8 +30,6 @@ class _HomePageState extends State<HomePage> {
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200,
             childAspectRatio: 1.3,
-            crossAxisSpacing: 2,
-            mainAxisSpacing: 2,
           ),
           itemCount: imgList.length,
           itemBuilder: (BuildContext context, int index) {
@@ -49,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                           Image.asset(
                             imgList[index].image,
                             fit: BoxFit.fitWidth,
-                            height: 80,
+                            height: 100,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),

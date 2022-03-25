@@ -9,12 +9,6 @@ class MealScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<PhotoItem> imgList = [
-      PhotoItem('images/burger.jpg', 'Burgers', 'Grilled beef burger'),
-      PhotoItem(
-          'images/spaghetti.jpg', 'Italian', 'Spaghetti with tomato sauce'),
-      PhotoItem('images/toast.jpg', 'Quick & easy', 'Toast Hawaii'),
-    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text('meals'),
@@ -30,7 +24,7 @@ class MealScreen extends StatelessWidget {
           itemCount: imgList.length,
           itemBuilder: (context, index) {
             return Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              padding: const EdgeInsets.all(8),
               width: double.maxFinite,
               child: Card(
                 shape: RoundedRectangleBorder(
@@ -56,12 +50,9 @@ class MealScreen extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          // The Positioned widget is used to position the text inside the Stack widget
                           bottom: 10,
                           right: 10,
-
                           child: Container(
-                            // We use this Container to create a black box that wraps the white text so that the user can read the text even when the image is white
                             width: 200,
                             color: Colors.black54,
                             padding: const EdgeInsets.all(10),
@@ -77,59 +68,11 @@ class MealScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          const Icon(
-                            Icons.access_time,
-                            size: 18,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(left: 5.0),
-                            child: Text(
-                              '20 min',
-                              style: TextStyle(
-                                color: grey,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          const Icon(
-                            Icons.shopping_bag_sharp,
-                            size: 18,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 5.0),
-                            child: Text(
-                              'Simple',
-                              style: TextStyle(
-                                color: Colors.grey.shade800,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          const Icon(
-                            Icons.attach_money_outlined,
-                            size: 18,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(left: 5.0),
-                            child: Text(
-                              'Affordable',
-                              style: TextStyle(
-                                color: grey,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14,
-                              ),
-                            ),
-                          ),
+                          minutes(),
+                          mealType(),
+                          affordable(),
                         ],
                       ),
                     ),
@@ -138,6 +81,72 @@ class MealScreen extends StatelessWidget {
               ),
             );
           }),
+    );
+  }
+
+  Row affordable() {
+    return Row(
+      children: const [
+        Icon(
+          Icons.attach_money_outlined,
+          size: 18,
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 5.0),
+          child: Text(
+            'Affordable',
+            style: TextStyle(
+              color: grey,
+              fontWeight: FontWeight.normal,
+              fontSize: 14,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row mealType() {
+    return Row(
+      children: [
+        const Icon(
+          Icons.shopping_bag_sharp,
+          size: 18,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 5.0),
+          child: Text(
+            'Simple',
+            style: TextStyle(
+              color: Colors.grey.shade800,
+              fontWeight: FontWeight.normal,
+              fontSize: 14,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row minutes() {
+    return Row(
+      children: const [
+        Icon(
+          Icons.access_time,
+          size: 18,
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 5.0),
+          child: Text(
+            '20 min',
+            style: TextStyle(
+              color: grey,
+              fontWeight: FontWeight.normal,
+              fontSize: 14,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
